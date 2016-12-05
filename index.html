@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Xiaota Cocos2d-js Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+	<canvas id="gameCanvas" width="320" height="568" style="margin-left: auto; margin-right: auto; padding-top: 0; display: block;"></canvas>
+	<script type="text/javascript" src="js/cocos2d-js-v3.12-lite.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+          window.onload = function(){
+              cc.game.onStart = function(){
+                  //load resources
+                  var g_resource = [];
+                  for(var tem in res){
+                    g_resource.push(res[tem]);
+                  }
+                  cc.LoaderScene.preload(g_resource, function () {
+                      cc.director.runScene(new StartScene());
+                  }, this);
+              };
+              cc.game.run("gameCanvas");
+              cc.director.setDisplayStats(false);
+          };
+    </script>
+</head>
+<body style="margin-top: 0;">
+
+</body>
+</html>
